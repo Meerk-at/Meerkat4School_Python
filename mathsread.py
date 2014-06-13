@@ -9,12 +9,13 @@ try:
 	csr = cnx.cursor()
 	query = (
       "INSERT INTO course "
-      "(version,ects,name)"
-      "VALUES (%s,%s,%s)")
+      "(version,ects,name,semester)"
+      "VALUES (%s,%s,%s,%s)")
 	json_data=open("courses_names").read()
 	jdata = json.loads(json_data)
 	for k in range (0, len(jdata['unchosenCourses'])):
 		course_name = jdata['unchosenCourses'][k][1]
+		semester = jdata['unchosenCourses'][k][3]
 		print (course_name)
 		data = (1,1,course_name)
 		try:
