@@ -17,7 +17,7 @@ try:
 		course_name = jdata['unchosenCourses'][k][1]
 		semester = jdata['unchosenCourses'][k][3]
 		print (course_name)
-		data = (1,1,course_name)
+		data = (1,1,course_name,semester)
 		try:
 			csr.execute(query,data)
 			print ('hey')
